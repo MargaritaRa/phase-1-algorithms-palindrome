@@ -1,19 +1,39 @@
-function reverseString(word) {
-  // Write your algorithm here
-  let reverse = word.split('').reverse().join('')
-    return reverse
-}
-
 function isPalindrome(word) {
-  // reverse the input string
-  const reverseWord = reverseString(word);
-  if (word === reverseWord) {
+  // iterate from the beginning of the string to the middle of the string
+  for (let i = 0; i <word.length / 2; i++){
+  // compare the letter we're iterating over to the corresponding letter at the end of the string
+    const j =word.length - 1 - i;
+    if(word[i] !== word[j]){
+       // if the letters don't match, return false
+       return false;
+    }
     return true;
-  } else {
-    return false;
   }
+  // if we reach the middle, and all the letters match, return true
 }
 
+
+// function reverseString(word) {
+//   // Write your algorithm here
+//   let reverse = word.split('').reverse().join('')
+//     return reverse
+// }
+
+// function isPalindrome(word) {
+//   // reverse the input string
+//   const reverseWord = reverseString(word);
+//   if (word === reverseWord) {
+//     return true;
+//   } else {
+//     return false;
+//   }
+// }
+// function isPalindrome(word) {
+//   // reverse the input string
+//   const reverseWord = reverseString(word);
+//   return word === reverseWord
+  
+// }
 /* 
   Add your pseudocode here
   let the word be reversed, take the last letters each time and make them first.
